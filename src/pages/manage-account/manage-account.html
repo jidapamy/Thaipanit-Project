@@ -1,0 +1,46 @@
+<!--
+  Generated template for the ManageAccountPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar hideBackButton="true">
+    <ion-buttons  start (click)="goBack()" >
+      <button ion-button>
+        <ion-icon name="ios-arrow-round-back"></ion-icon>
+      </button>
+ 	  </ion-buttons>
+    <ion-title>Manage account</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <span *ngIf="userAccount.length>0">
+  <p class="topicLabel">MY DEPOSITS</p>
+    <ion-list >
+      <ion-item *ngFor="let account of userAccount">
+            <ion-label>
+              <span class='fixedLabel'>{{account.accountNumber}}</span><br>
+              <span class='fixedLabel'>{{account.type}}</span><br>
+              <span *ngIf="account.nickname!==''" class='fixedLabel' style="color:#7631c1;" (click)="setNickname()">{{account.nickname}}</span>         
+              <span *ngIf="account.nickname===''" class='fixedLabel' style="color:#7631c1;" (click)="setNickname()">Set a nickname</span>         
+              
+            </ion-label >
+            <ion-label class="locationIcon">
+              <ion-icon name="md-create" (click)="setNickname(account)"></ion-icon>
+              <ion-icon name="ios-trash" (click)="removeAccount(account)"></ion-icon>
+            </ion-label >
+      </ion-item>
+    </ion-list>
+  </span>
+  <span *ngIf="userAccount.length<=0">
+      <p class="topicLabel">No Account. Please add your account</p>
+      </span>
+    <button ion-button outline block (click)="addAccount()">
+        Add account
+    </button>
+</ion-content>

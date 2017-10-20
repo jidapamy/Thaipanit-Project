@@ -1,0 +1,41 @@
+
+<ion-header>
+
+  <ion-navbar color="color3">
+    <ion-title>More options</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+      <button icon-left ion-item (click)="goToSettings()">
+            <ion-icon name="ios-settings"></ion-icon> 
+            <span  class='fixedLabel'>Settings</span>
+      </button>
+
+      <button icon-left ion-item (click)="goToPromptPay()">
+            <ion-icon name="md-qr-scanner"></ion-icon> 
+            <span  class='fixedLabel'>Create PromptPay QR</span>
+      </button>
+
+      <button icon-left ion-item >
+            <ion-icon name="ios-information-circle"></ion-icon> 
+            <span  class='fixedLabel'>Help</span>
+      </button>
+
+      <button icon-left ion-item >
+            <ion-icon name="ios-book"></ion-icon> 
+            <span  class='fixedLabel'>Teams & Conditions</span>
+      </button>
+
+    </ion-list>
+
+    <p class="text">SCB Easy Version 3.1 (410)</p>
+
+     <ion-footer>
+          <button ion-button outline block (click)="logOut()">
+            Log out
+          </button>
+    </ion-footer>
+      
+</ion-content>

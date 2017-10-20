@@ -1,0 +1,44 @@
+<!--
+  Generated template for the RequestMoneyPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar hideBackButton="true">
+    <ion-buttons  start (click)="goBack()" >
+      <button ion-button>
+        <ion-icon name="ios-arrow-round-back"></ion-icon>
+      </button>
+ 	  </ion-buttons>
+    <ion-title>Request Money</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <br><br><br><br>
+  <span class="locationImg">
+    <img src="img/promtpay.png">
+  </span>
+  <br><br><br><br>
+  <br><br><br><br>
+  <br><br>
+  <span class="locationText">
+    <h4>SCB PromptPay is required</h4>
+    <p>Request money service. Only for the customers who applied</p>
+    <p>for SCB PromptPay.</p>
+  </span>
+  <br><br><br>
+  <button ion-button block class="reviewBefore" (click)="goToSettingPromptpay()">
+      Go to Settings
+  </button>
+</ion-content>
+<!-- 
+<ion-footer>
+    <button ion-button block (click)="goToSettingPromptpay()">
+      Go to Settings
+    </button>
+</ion-footer> -->

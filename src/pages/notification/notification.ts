@@ -1,29 +1,24 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { BankingservicesPage } from '../bankingservices/bankingservices';
 
 /**
- * Generated class for the HomePage page.
+ * Generated class for the NotificationPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html',
+  selector: 'page-notification',
+  templateUrl: 'notification.html',
 })
-export class HomePage {
+export class NotificationPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad HomePage');
-  }
-
-  toBankServices(){
-    this.navCtrl.push(BankingservicesPage);
+    console.log('ionViewDidLoad NotificationPage');
   }
 
 }

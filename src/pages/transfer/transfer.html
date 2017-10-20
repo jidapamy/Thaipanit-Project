@@ -1,0 +1,533 @@
+<!--
+  Generated template for the TransferPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar hideBackButton="true">
+    <ion-buttons  start (click)="goBack()" >
+      <button ion-button>
+        <ion-icon name="ios-arrow-round-back"></ion-icon>
+      </button>
+ 	  </ion-buttons>
+    <ion-title>Transfer</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list *ngIf="favAccount.length>0 && !chooseFav">
+        <ion-item>
+           <p class="favAccount">Favorite ({{favAccount.length}})</p>
+           <span *ngIf="favAccount.length==1">
+                <ion-row style="padding-top: 14px;">
+                    <ion-col (click)="chooseInFav(0)">
+                        <span class="locationBillImage">
+                            <img src="img/banking/{{favAccount[0].banking}}.jpg">
+                        </span>
+                    </ion-col>
+                    <ion-col >
+                    </ion-col> 
+                    <ion-col >
+                    </ion-col>   
+                    <ion-col >
+                    </ion-col>      
+                </ion-row>
+
+                <ion-row style="margin-top: -16px;padding-top: 8px;">
+                    <ion-col (click)="chooseInFav(0)">
+                        <p class="textLabel">{{favAccount[0].nickname}}</p>
+                    </ion-col>
+                    <ion-col >
+                    </ion-col> 
+                    <ion-col >
+                    </ion-col>   
+                    <ion-col >
+                    </ion-col>     
+                </ion-row>
+           </span>
+
+           
+           <span *ngIf="favAccount.length==2">
+                <ion-row style="padding-top: 14px;">
+                    <ion-col (click)="chooseInFav(0)">
+                        <span class="locationBillImage">
+                            <img src="img/banking/{{favAccount[0].banking}}.jpg">
+                        </span>
+                    </ion-col>
+                    <ion-col (click)="chooseInFav(1)">
+                        <span class="locationBillImage">
+                            <img src="img/banking/{{favAccount[1].banking}}.jpg">
+                        </span>
+                    </ion-col>
+                    <ion-col >
+                    </ion-col>   
+                    <ion-col >
+                    </ion-col>      
+                </ion-row>
+
+                <ion-row style="margin-top: -16px;padding-top: 8px;">
+                    <ion-col (click)="chooseInFav(0)">
+                        <p class="textLabel">{{favAccount[0].nickname}}</p>
+                    </ion-col>
+                    <ion-col (click)="chooseInFav(1)">
+                        <p class="textLabel">{{favAccount[1].nickname}}</p>
+                    </ion-col>
+                    <ion-col >
+                    </ion-col>   
+                    <ion-col >
+                    </ion-col>     
+                </ion-row>
+           </span>
+
+
+           <span *ngIf="favAccount.length==3">
+                <ion-row style="padding-top: 14px;">
+                    <ion-col (click)="chooseInFav(0)">
+                        <span class="locationBillImage">
+                            <img src="img/banking/{{favAccount[0].banking}}.jpg">
+                        </span>
+                    </ion-col>
+                    <ion-col (click)="chooseInFav(1)">
+                        <span class="locationBillImage">
+                            <img src="img/banking/{{favAccount[1].banking}}.jpg">
+                        </span>
+                    </ion-col>
+                    <ion-col (click)="chooseInFav(2)">
+                        <span class="locationBillImage">
+                            <img src="img/banking/{{favAccount[2].banking}}.jpg">
+                        </span>
+                    </ion-col>  
+                    <ion-col >
+                    </ion-col>      
+                </ion-row>
+
+                <ion-row style="margin-top: -16px;padding-top: 8px;">
+                    <ion-col (click)="chooseInFav(0)">
+                        <p class="textLabel">{{favAccount[0].nickname}}</p>
+                    </ion-col>
+                    <ion-col (click)="chooseInFav(1)">
+                        <p class="textLabel">{{favAccount[1].nickname}}</p>
+                    </ion-col>
+                    <ion-col (click)="chooseInFav(2)">
+                        <p class="textLabel">{{favAccount[2].nickname}}</p>
+                    </ion-col> 
+                    <ion-col >
+                    </ion-col>     
+                </ion-row>
+           </span>
+
+
+           <span *ngIf="favAccount.length>=4">
+                <ion-row style="padding-top: 14px;">
+                    <ion-col (click)="chooseInFav(0)">
+                        <span class="locationBillImage">
+                            <img src="img/banking/{{favAccount[0].banking}}.jpg">
+                        </span>
+                    </ion-col>
+                    <ion-col (click)="chooseInFav(1)">
+                        <span class="locationBillImage">
+                            <img src="img/banking/{{favAccount[1].banking}}.jpg">
+                        </span>
+                    </ion-col>
+                    <ion-col (click)="chooseInFav(2)">
+                        <span class="locationBillImage">
+                            <img src="img/banking/{{favAccount[2].banking}}.jpg">
+                        </span>
+                    </ion-col>     
+                    <ion-col (click)="chooseInFav(3)">
+                            <span class="locationBillImage">
+                                <img src="img/banking/{{favAccount[3].banking}}.jpg">
+                            </span>
+                     </ion-col>   
+                </ion-row>
+
+                <ion-row style="margin-top: -16px;padding-top: 8px;">
+                    <ion-col (click)="chooseInFav(0)">
+                        <p class="textLabel">{{favAccount[0].nickname}}</p>
+                    </ion-col>
+                    <ion-col (click)="chooseInFav(1)">
+                        <p class="textLabel">{{favAccount[1].nickname}}</p>
+                    </ion-col>
+                    <ion-col (click)="chooseInFav(2)">
+                        <p class="textLabel">{{favAccount[2].nickname}}</p>
+                    </ion-col>   
+                    <ion-col (click)="chooseInFav(3)">
+                        <p class="textLabel">{{favAccount[3].nickname}}</p>
+                    </ion-col>
+                </ion-row>
+           </span>
+        </ion-item>
+    </ion-list>
+
+    <p class="topicLabel">FROM</p>
+      <button class="account">
+        <p class="fixedLabel">{{nowAccount[0].accountNumber}}</p>
+        <p class="fixedLabel" style="color:#A3A3A3">{{nowAccount[0].moneyShow}}</p>
+      </button>
+      <ion-label class="bullet">
+          <img src="img/pointPurple.jpg">              
+      </ion-label>
+    <p class="topicLabel">TO</p>
+
+
+
+    <span *ngIf="!selectBanking">
+      <ion-list>
+
+              <ion-segment [(ngModel)]="segment" >
+                  <ion-segment-button value="own" >
+                    OWN
+                  </ion-segment-button>
+                  <ion-segment-button value="others">
+                    OTHERS
+                  </ion-segment-button>
+                  <ion-segment-button value="promptpay">
+                    PROMPTPAY
+                  </ion-segment-button>
+                </ion-segment>
+
+
+      <span *ngIf="segment==='others'">
+        <ion-row style="padding-top: 10px;">
+          <ion-col (click)="chooseInAll(0)">
+              <span class="locationBillImage">
+                  <img src="img/banking/{{allBanking[0].banking}}.jpg">
+              </span>
+          </ion-col>
+          <ion-col (click)="chooseInAll(1)" >
+              <span class="locationBillImage">
+                  <img src="img/banking/{{allBanking[1].banking}}.jpg">
+              </span>
+          </ion-col>
+          <ion-col (click)="chooseInAll(2)">
+              <span class="locationBillImage">
+                  <img src="img/banking/{{allBanking[2].banking}}.jpg">
+              </span>
+          </ion-col>      
+        </ion-row>
+
+        <ion-row style="margin-top: -16px;padding-top:0px;padding-bottom: 12px;">
+            <ion-col (click)="chooseInAll(0)">
+                <p class="textLabel">{{allBanking[0].banking}}</p>
+            </ion-col>
+            <ion-col (click)="chooseInAll(1)">
+                <p class="textLabel">{{allBanking[1].banking}}</p>
+            </ion-col>
+            <ion-col (click)="chooseInAll(2)">
+                <p class="textLabel">{{allBanking[2].banking}}</p>
+            </ion-col>      
+        </ion-row>
+
+
+        <ion-row style="padding-top: 10px;">
+          <ion-col (click)="chooseInAll(3)">
+              <span class="locationBillImage">
+                  <img src="img/banking/{{allBanking[3].banking}}.jpg">
+              </span>
+          </ion-col>
+          <ion-col (click)="chooseInAll(4)">
+              <span class="locationBillImage">
+                  <img src="img/banking/{{allBanking[4].banking}}.jpg">
+              </span>
+          </ion-col>
+          <ion-col (click)="chooseInAll(5)">
+              <span class="locationBillImage">
+                  <img src="img/banking/{{allBanking[5].banking}}.jpg">
+              </span>
+          </ion-col>      
+        </ion-row>
+
+        <ion-row style="margin-top: -16px;padding-top:0px;padding-bottom: 12px;">
+            <ion-col (click)="chooseInAll(3)">
+                <p class="textLabel">{{allBanking[3].banking}}</p>
+            </ion-col>
+            <ion-col (click)="chooseInAll(4)">
+                <p class="textLabel">{{allBanking[4].banking}}</p>
+            </ion-col>
+            <ion-col (click)="chooseInAll(5)">
+                <p class="textLabel">{{allBanking[5].banking}}</p>
+            </ion-col>      
+          </ion-row>
+
+
+          <ion-row style="padding-top: 10px;">
+          <ion-col (click)="chooseInAll(6)">
+              <span class="locationBillImage">
+                  <img src="img/banking/{{allBanking[6].banking}}.jpg">
+              </span>
+          </ion-col>
+          <ion-col (click)="chooseInAll(7)">
+              <span class="locationBillImage">
+                  <img src="img/banking/{{allBanking[7].banking}}.jpg">
+              </span>
+          </ion-col>
+          <ion-col (click)="chooseInAll(8)">
+              <span class="locationBillImage">
+                  <img src="img/banking/{{allBanking[8].banking}}.jpg">
+              </span>
+          </ion-col>      
+        </ion-row>
+
+        <ion-row style="margin-top: -16px;padding-top:0px;padding-bottom: 12px;">
+            <ion-col (click)="chooseInAll(6)">
+                <p class="textLabel">{{allBanking[6].banking}}</p>
+            </ion-col>
+            <ion-col (click)="chooseInAll(7)">
+                <p class="textLabel">{{allBanking[7].banking}}</p>
+            </ion-col>
+            <ion-col (click)="chooseInAll(8)">
+                <p class="textLabel">{{allBanking[8].banking}}</p>
+            </ion-col>      
+          </ion-row>
+
+
+          <ion-row style="padding-top: 10px;">
+          <ion-col (click)="chooseInAll(9)">
+              <span class="locationBillImage">
+                  <img src="img/banking/{{allBanking[9].banking}}.jpg">
+              </span>
+          </ion-col>
+          <ion-col (click)="chooseInAll(10)">
+              <span class="locationBillImage">
+                  <img src="img/banking/{{allBanking[10].banking}}.jpg">
+              </span>
+          </ion-col>
+          <ion-col (click)="chooseInAll(11)">
+              <span class="locationBillImage">
+                  <img src="img/banking/{{allBanking[11].banking}}.jpg">
+              </span>
+          </ion-col>      
+        </ion-row>
+
+        <ion-row style="margin-top: -16px;padding-top:0px;padding-bottom: 12px;">
+            <ion-col (click)="chooseInAll(9)">
+                <p class="textLabel">{{allBanking[9].banking}}</p>
+            </ion-col>
+            <ion-col (click)="chooseInAll(10)">
+                <p class="textLabel">{{allBanking[10].banking}}</p>
+            </ion-col>
+            <ion-col (click)="chooseInAll(11)">
+                <p class="textLabel">{{allBanking[11].banking}}</p>
+            </ion-col>      
+          </ion-row>
+
+          <ion-row style="padding-top: 10px;">
+          <ion-col (click)="chooseInAll(12)">
+              <span class="locationBillImage">
+                  <img src="img/banking/{{allBanking[12].banking}}.jpg">
+              </span>
+          </ion-col>
+          <ion-col (click)="chooseInAll(13)">
+              <span class="locationBillImage">
+                  <img src="img/banking/{{allBanking[13].banking}}.jpg">
+              </span>
+          </ion-col>
+          <ion-col>
+          </ion-col>      
+        </ion-row>
+
+        <ion-row style="margin-top: -16px;padding-top:0px;padding-bottom: 12px;">
+            <ion-col (click)="chooseInAll(12)">
+                <p class="textLabel">{{allBanking[12].banking}}</p>
+            </ion-col>
+            <ion-col (click)="chooseInAll(13)">
+                <p class="textLabel">{{allBanking[13].banking}}</p>
+            </ion-col>
+            <ion-col>
+            </ion-col>      
+          </ion-row>
+        <br><br>
+        </span>
+
+<!-- **************************** -->
+        
+
+      <span *ngIf="segment==='own'">
+          <span *ngIf="nowAccount.length==1">
+            <ion-row>
+                <ion-col>
+                    <br>
+                    <p class="topicLabel" style="color:#6F6F6F;padding-bottom: 0px;font-weight: 400;">Your do not have eligible bank account to do transaction</p>
+                    <p class="topicLabel" style="font-size: 10px;">Please add an eligible account</p>
+                </ion-col> 
+          </ion-row>
+          </span>
+          
+          <span *ngIf="nowAccount.length==2">
+            <ion-row style="padding-top: 10px;">
+              <ion-col (click)="chooseOwn(1)">
+                  <span class="locationBillImage">
+                      <img src="img/banking/SCB.jpg">
+                  </span>
+              </ion-col>
+              <ion-col>
+              </ion-col>
+              <ion-col>
+              </ion-col>      
+            </ion-row>
+
+            <ion-row style="margin-top: -16px;padding-top:0px;padding-bottom: 12px;">
+                <ion-col (click)="chooseOwn(1)">
+                    <p class="textLabel">{{nowAccount[1].accountNumber}}</p>
+                    <p class="textLabel">{{nowAccount[1].moneyShow}}</p>
+                </ion-col>
+               <ion-col>
+              </ion-col>
+                <ion-col>
+                </ion-col>      
+            </ion-row>
+          </span>
+
+
+          <span *ngIf="nowAccount.length==3">
+            <ion-row style="padding-top: 10px;">
+              <ion-col (click)="chooseOwn(1)">
+                  <span class="locationBillImage">
+                      <img src="img/banking/SCB.jpg">
+                  </span>
+              </ion-col>
+              <ion-col (click)="chooseOwn(2)" >
+                  <span class="locationBillImage">
+                      <img src="img/banking/SCB.jpg">
+                  </span>
+              </ion-col>
+              <ion-col>
+              </ion-col>      
+            </ion-row>
+
+            <ion-row style="margin-top: -16px;padding-top:0px;padding-bottom: 12px;">
+                <ion-col (click)="chooseOwn(1)">
+                    <p class="textLabel">{{nowAccount[1].accountNumber}}</p>
+                    <p class="textLabel">{{nowAccount[1].moneyShow}}</p>
+                </ion-col>
+                <ion-col (click)="chooseOwn(2)">
+                    <p class="textLabel">{{nowAccount[2].accountNumber}}</p>
+                    <p class="textLabel">{{nowAccount[2].moneyShow}}</p>
+                </ion-col>
+                <ion-col>
+                </ion-col>      
+            </ion-row>
+          </span>
+
+
+          <span *ngIf="nowAccount.length==4">
+            <ion-row style="padding-top: 10px;">
+              <ion-col (click)="chooseOwn(1)">
+                  <span class="locationBillImage">
+                      <img src="img/banking/SCB.jpg">
+                  </span>
+              </ion-col>
+              <ion-col (click)="chooseOwn(2)" >
+                  <span class="locationBillImage">
+                      <img src="img/banking/SCB.jpg">
+                  </span>
+              </ion-col>
+              <ion-col (click)="chooseOwn(3)">
+                  <span class="locationBillImage">
+                      <img src="img/banking/SCB.jpg">
+                  </span>
+              </ion-col>      
+            </ion-row>
+
+            <ion-row style="margin-top: -16px;padding-top:0px;padding-bottom: 12px;">
+                <ion-col (click)="chooseOwn(1)">
+                    <p class="textLabel">{{nowAccount[2].accountNumber}}</p>
+                    <p class="textLabel">{{nowAccount[2].moneyShow}}</p>
+                </ion-col>
+                <ion-col (click)="chooseOwn(2)">
+                    <p class="textLabel">{{nowAccount[2].accountNumber}}</p>
+                    <p class="textLabel">{{nowAccount[2].moneyShow}}</p>
+                </ion-col>
+                <ion-col (click)="chooseOwn(3)">
+                    <p class="textLabel">{{nowAccount[3].accountNumber}}</p>
+                    <p class="textLabel">{{nowAccount[3].moneyShow}}</p>
+                </ion-col>      
+            </ion-row>
+          </span>
+      </span>
+
+
+<!-- **************************** -->        
+        <span *ngIf="segment==='promptpay'">
+            <ion-item>
+                <ion-label style="padding-bottom: 2%;">
+                    <p class='fixedLabel' style="padding-bottom:3%;padding-top:3%;">PromptPay ID</p>
+                    <input type="number" placeholder="Enter PromptPay ID"[(ngModel)]="promptpayId" /><br>
+                </ion-label>
+            </ion-item>
+        </span>
+      </ion-list>
+    </span>
+
+
+
+<!-- !!!!!!!!!!!!!!!!!!! -->
+
+
+    <span *ngIf="selectBanking">
+        <ion-list>
+          <ion-item>
+              <ion-label>
+                  <span class="locationBillImage">
+                      <img src="img/banking/{{chooseBanking.banking}}.jpg" align="left">
+                  </span>
+              </ion-label>
+              <ion-label class="locationText" *ngIf="chooseFav">
+                  <p class='labelChoose'>{{chooseBanking.banking}}</p>
+                  <p class='labelChoose'>{{chooseBanking.nickname}}</p>
+                  <p class='labelChoose' style="color:#A3A3A3;font-size: 12px; padding-top: 0px;">({{chooseBanking.accountNumber}})</p>
+              </ion-label>
+              <ion-label class="locationText" *ngIf="!chooseFav">
+                  <p class='labelChoose'>{{chooseBanking.banking}}</p>
+              </ion-label>
+              <ion-label class="locationIcon" (click)="close()">
+                  <ion-icon name="ios-close"></ion-icon>
+              </ion-label>
+          </ion-item>
+          <ion-item *ngIf="!chooseFav">
+              <ion-label>
+                  <p class='fixedLabel' style="padding-bottom:1.5%;padding-top:4%;">Account number</p>
+                  <input type="number" placeholder="Enter your account no."[(ngModel)]="accountNumber" />
+                </ion-label>
+          </ion-item>
+        </ion-list>
+
+
+        <p class="topicLabel">AMOUNT</p>
+         <ion-list>
+          <ion-item *ngIf="chooseFav">
+              <ion-input [(ngModel)]="amount" item-right type="number" value="{{chooseBanking.amount}}" placeholder="0.00"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="!chooseFav">
+              <ion-input [(ngModel)]="amount" item-right type="number" placeholder="0.00"></ion-input>
+          </ion-item>
+        </ion-list>
+
+        <p class="limit">Payment limit per day : 100,000.00</p>
+
+        <p class="topicLabel">MORE OPTIONS</p>
+        <ion-list>
+         <ion-item>
+           <ion-label>
+             <p>
+              <span class='note'>Note</span>     
+              <span style="font-size: 10px;margin-left: 83%;">0/40</span>
+            </p>
+          <input placeholder="Enter personal note (optional)"[(ngModel)]="note" /> 
+         </ion-label>
+        </ion-item>
+       </ion-list>
+          <button ion-button block (click)="review(chooseBanking)">
+            Review
+          </button>
+    </span>
+
+
+
+
+    
+</ion-content>

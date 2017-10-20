@@ -1,0 +1,133 @@
+<!--
+  Generated template for the ReviewPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header [ngClass]="{opacity:verified}">
+
+  <ion-navbar hideBackButton="true">
+    <ion-buttons  start (click)="goBack()" >
+      <button ion-button>
+        <ion-icon name="ios-arrow-round-back"></ion-icon>
+      </button>
+ 	  </ion-buttons>
+    <ion-title>Review</ion-title>
+    <ion-buttons *ngIf="toAccount.nickname===''" end style="padding-right: 2%;" (click)="addFavorite(toAccount)" >
+      <button ion-button style="font-size: 23px;color: #ffcc00;">
+        <ion-icon name="md-star"></ion-icon>
+      </button>
+ 	  </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding [ngClass]="{opacity:verified}">
+    <ion-list *ngIf="toAccount.page!=='cardless'">
+      <ion-item>
+        <ion-label class="fixedLabel">
+          FROM
+        </ion-label>
+        <ion-label class="space" style="padding-bottom: 4%;">
+          <p class="detailLabel"><img src="/img/banking/SCB.jpg"> CAROL WELLMAN</p>
+          <p class="detailLabel" style="color:#A3A3A3;">xxx-xxx129-7</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="fixedLabel">
+          TO
+        </ion-label>
+        <ion-label class="space" style="padding-bottom: 4%;" *ngIf="toAccount.page==='bill'">
+          <p class="detailLabel"><img src="/img/{{toAccount.page}}/{{toAccount.alias}}.jpg"> {{toAccount.billName}}</p>
+          <p class="detailLabel" style="color:#A3A3A3;">{{toAccount.ref1}}</p>
+          <p class="detailLabel" style="color:#A3A3A3;">{{toAccount.ref2}}</p>
+          <p class="detailLabel" *ngIf="nickname!==''">
+            <ion-icon name="md-star"></ion-icon>
+            {{nickname}}
+          </p>
+        </ion-label>
+        <ion-label class="space" style="padding-bottom: 4%;" *ngIf="toAccount.page=='banking'" >
+          <p class="detailLabel" *ngIf="toAccount.accountName==''" ><img src="/img/{{toAccount.page}}/{{toAccount.banking}}.jpg" > Richard Langer</p>
+          <p class="detailLabel" *ngIf="toAccount.accountName!=''"><img src="/img/{{toAccount.page}}/{{toAccount.banking}}.jpg"> {{toAccount.accountName}}</p>
+          <p class="detailLabel" style="color:#A3A3A3;">{{toAccount.accountNumber}}</p>
+          <p class="detailLabel" *ngIf="nickname!==''">
+            <ion-icon name="md-star"></ion-icon>
+            {{nickname}}
+          </p>
+          <!-- <p class="detailLabel" *ngIf="toAccount.note!==''" style="font-size:11px">{{toAccount.note}}</p> -->
+          
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="fixedLabel">
+          AMOUNT
+        </ion-label>
+        <ion-label class="space">
+          <p class="detailLabel">{{amountShow}}</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="fixedLabel">
+          FEE
+        </ion-label>
+        <ion-label class="space" *ngIf="toAccount.page=='bill'" >
+          <p class="detailLabel">20.00</p>
+        </ion-label>
+        <ion-label class="space" *ngIf="toAccount.page=='banking' && toAccount.banking == 'SCB' " >
+          <p class="detailLabel">0.00</p>
+        </ion-label>
+        <ion-label class="space" *ngIf="toAccount.page=='banking' && toAccount.banking != 'SCB' " >
+          <p class="detailLabel">25.00</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+    <span *ngIf="toAccount.page==='cardless'">
+    <ion-list>
+      <ion-item>
+        <ion-label class="fixedLabel">
+          FROM
+        </ion-label>
+        <ion-label class="space">
+          <p class="detailLabel"><img src="/img/banking/SCB.jpg"> CAROL WELLMAN</p>
+          <p class="detailLabel" style="color:#A3A3A3;">xxx-xxx129-7</p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label class="fixedLabel">
+          AMOUNT
+        </ion-label>
+        <ion-label class="space">
+          <p class="detailLabel">{{amountShow}}</p>
+        </ion-label>
+      </ion-item>
+      <span class="center">>
+        <p style="margin-bottom: -2%;">A transaction fee will be imposed when you withdraw from ATM </p>
+        <p>at Inter Region (IR)</p>
+      </span>
+    </ion-list>
+    <p class="topicLabel">VERIFICATION</p>
+    <ion-list (click)="selectVerified()">
+      <ion-item style="padding-top: 7px;padding-bottom: 4px;">
+            <input type="number" disabled placeholder="{{verifiedNum}}" [(ngModel)]="ref1"/>
+            <span class="arrowIcon"><ion-icon name="arrow-down"></ion-icon></span>
+          </ion-item>
+    </ion-list>
+    </span>
+
+</ion-content>
+
+<ion-footer>
+    <button ion-button block (click)="confirm()" *ngIf="!verified">
+        Confirm
+    </button>
+    <ion-toolbar style="height: 215px;" *ngIf="verified" (click)="chooseVerified()">
+      <ion-item style="border-top: 0.55px solid #c8c7cc;font-size: 13px;color: #7d7d7d;">
+        <ion-label style="margin: 16px 8px 11px 0;text-align: center;">{{verifiedNum}}</ion-label>
+      </ion-item>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,60 @@
+<!--
+  Generated template for the EditFavoritePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar hideBackButton="true">
+    <ion-buttons start (click)="goBack()">
+      <button ion-button>
+        <ion-icon name="ios-arrow-round-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Edit favorite {{type}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <span *ngIf="type==='transfer'">
+      <ion-list *ngIf="accountTransfer.length>0">
+        <ion-item *ngFor="let account of accountTransfer">
+              <ion-label class="locationUserImage" >
+                <img src="img/banking/{{account.banking}}.jpg"  align="left">
+              </ion-label >
+              <ion-label class="locationText">
+                  {{account.nickname}}
+              </ion-label>
+              <ion-label class="locationIcon">
+                <ion-icon name="md-create" (click)="setNickname(account)"></ion-icon>
+              </ion-label >
+              <ion-label class="locationIcon">
+                <ion-icon name="ios-trash" (click)="removeAccount(account)"></ion-icon>
+              </ion-label>
+        </ion-item>
+      </ion-list>
+    </span>
+    <span *ngIf="type==='bill payment'">
+      <ion-list *ngIf="billFavorite.length>0">
+        <ion-item *ngFor="let bill of billFavorite">
+              <ion-label class="locationUserImage" >
+                <img src="img/bill/{{bill.alias}}.jpg"  align="left">
+              </ion-label >
+              <ion-label class="locationText">
+                  {{bill.nickname}}
+              </ion-label>
+              <ion-label class="locationIcon">
+                <ion-icon name="md-create" (click)="setNicknameBill(bill)"></ion-icon>
+              </ion-label >
+              <ion-label class="locationIcon">
+                <ion-icon name="ios-trash" (click)="removeAccountBill(bill)"></ion-icon>
+              </ion-label>
+        </ion-item>
+      </ion-list>
+
+    </span>
+
+</ion-content>
